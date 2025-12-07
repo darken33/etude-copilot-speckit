@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    environment:
+      - REACT_APP_API_BASE_URL=http://backend:8080
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  backend:
+    image: your-backend-image:latest
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+      - DATABASE_URL=jdbc:postgresql://db:5432/connaissance_client
+    depends_on:
+      - db
+    restart: unless-stopped
+    networks:
+      - app-network
+
+  db:
+    image: postgres:15-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_DB=connaissance_client
+      - POSTGRES_USER=sqli_user
+      - POSTGRES_PASSWORD=sqli_password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    restart: unless-stopped
+    networks:
+      - app-network
+
+volumes:
+  postgres_data:
+
+networks:
+  app-network:
+    driver: bridge

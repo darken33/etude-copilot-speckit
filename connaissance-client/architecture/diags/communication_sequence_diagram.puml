@@ -1,0 +1,49 @@
+@startuml
+skinparam monochrome true
+title "Connaissance Client & Fiscalite Communication"
+
+actor "Client"
+boundary "EspaceClient"
+box ConnaissanceClient
+  boundary "CCAPI"
+  boundary "CCDomain"
+  database "CCTable"
+end box 
+queue "EventBus"
+box Fiscalite
+  boundary "FSConsumer"
+  boundary "FSDomain"
+  database "FSTable"
+end box 
+
+activate Client
+Client -> EspaceClient ++: getInformations() 
+EspaceClient -> CCAPI ++: getInformations()
+CCAPI -> CCDomain ++: getInfomations()
+CCDomain -> CCTable ++: read()
+CCDomain <- CCTable --: client_informations
+CCAPI <- CCDomain --: client_informations
+EspaceClient <- CCAPI --: client_informations
+Client <- EspaceClient --: client_page 
+
+Client -> EspaceClient ++: changeSituation() 
+EspaceClient -> CCAPI ++: changeSituation()
+CCAPI -> CCDomain ++: changeSituation()
+CCDomain -> CCTable ++: save()
+CCDomain <- CCTable --: ok
+CCDomain -> EventBus ++: emitEvent(situation_updated)
+CCAPI <- CCDomain --: ok
+EspaceClient <- CCAPI --: ok
+Client <- EspaceClient --: client_page
+deactivate Client 
+
+EventBus -> FSConsumer ++: situation_updated
+deactivate EventBus
+FSConsumer -> FSDomain ++: updateNbParts()
+FSDomain -> FSDomain : calucleNbParts()
+FSDomain -> FSTable ++: save()
+FSDomain <- FSTable --: ok
+FSConsumer <- FSDomain --: ok
+deactivate FSConsumer
+
+@enduml

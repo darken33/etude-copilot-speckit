@@ -1,0 +1,431 @@
+2024-03-04 09:55:16,772 INFO o.a.j.u.JMeterUtils: Setting Locale to en_US
+2024-03-04 09:55:16,783 INFO o.a.j.JMeter: Loading user properties from: /home/pbousquet/Applications/apache-jmeter-5.4.1/bin/user.properties
+2024-03-04 09:55:16,783 INFO o.a.j.JMeter: Loading system properties from: /home/pbousquet/Applications/apache-jmeter-5.4.1/bin/system.properties
+2024-03-04 09:55:16,786 INFO o.a.j.JMeter: Copyright (c) 1998-2021 The Apache Software Foundation
+2024-03-04 09:55:16,786 INFO o.a.j.JMeter: Version 5.4.1
+2024-03-04 09:55:16,786 INFO o.a.j.JMeter: java.version=11.0.19
+2024-03-04 09:55:16,786 INFO o.a.j.JMeter: java.vm.name=OpenJDK 64-Bit Server VM
+2024-03-04 09:55:16,786 INFO o.a.j.JMeter: os.name=Linux
+2024-03-04 09:55:16,786 INFO o.a.j.JMeter: os.arch=amd64
+2024-03-04 09:55:16,786 INFO o.a.j.JMeter: os.version=5.15.0-91-generic
+2024-03-04 09:55:16,786 INFO o.a.j.JMeter: file.encoding=UTF-8
+2024-03-04 09:55:16,786 INFO o.a.j.JMeter: java.awt.headless=null
+2024-03-04 09:55:16,786 INFO o.a.j.JMeter: Max memory     =8331984896
+2024-03-04 09:55:16,786 INFO o.a.j.JMeter: Available Processors =20
+2024-03-04 09:55:16,790 INFO o.a.j.JMeter: Default Locale=English (United States)
+2024-03-04 09:55:16,790 INFO o.a.j.JMeter: JMeter  Locale=English (United States)
+2024-03-04 09:55:16,790 INFO o.a.j.JMeter: JMeterHome=/home/pbousquet/Applications/apache-jmeter-5.4.1
+2024-03-04 09:55:16,790 INFO o.a.j.JMeter: user.dir  =/home/pbousquet/Workspaces/SQLI/talks/poc_crac_java/pocs/connaissance-client/tests/jmeter
+2024-03-04 09:55:16,790 INFO o.a.j.JMeter: PWD       =/home/pbousquet/Workspaces/SQLI/talks/poc_crac_java/pocs/connaissance-client/tests/jmeter
+2024-03-04 09:55:16,790 INFO o.a.j.JMeter: IP: 127.0.1.1 Name: BO-3JFFVL3 FullName: BO-3JFFVL3
+2024-03-04 09:55:16,925 INFO o.a.j.JMeter: Setting LAF to: com.github.weisj.darklaf.DarkLaf:com.github.weisj.darklaf.theme.DarculaTheme
+2024-03-04 09:55:17,056 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2024-03-04 09:55:35,718 INFO o.a.j.s.FileServer: Default base='/home/pbousquet/Workspaces/SQLI/talks/poc_crac_java/pocs/connaissance-client/tests/jmeter'
+2024-03-04 09:55:35,720 INFO o.a.j.g.a.Load: Loading file: /home/pbousquet/Workspaces/SQLI/talks/poc_crac_java/pocs/connaissance-client/tests/jmeter/connaissance-client-tests.jmx
+2024-03-04 09:55:35,721 INFO o.a.j.s.FileServer: Set new base='/home/pbousquet/Workspaces/SQLI/talks/poc_crac_java/pocs/connaissance-client/tests/jmeter'
+2024-03-04 09:55:35,807 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2024-03-04 09:55:35,815 INFO o.a.j.s.SaveService: Using SaveService properties version 5.0
+2024-03-04 09:55:35,816 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2024-03-04 09:55:35,817 INFO o.a.j.s.SaveService: Loading file: /home/pbousquet/Workspaces/SQLI/talks/poc_crac_java/pocs/connaissance-client/tests/jmeter/connaissance-client-tests.jmx
+2024-03-04 09:55:35,829 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2024-03-04 09:55:35,829 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2024-03-04 09:55:35,829 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2024-03-04 09:55:35,829 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2024-03-04 09:55:35,829 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2024-03-04 09:55:35,829 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2024-03-04 09:55:35,926 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2024-03-04 09:55:35,926 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2024-03-04 09:55:35,926 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2024-03-04 09:55:35,926 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2024-03-04 09:55:36,023 INFO o.a.j.v.ViewResultsFullVisualizer: Add JavaFX to your Java installation if you want to use renderer: org.apache.jmeter.visualizers.RenderInBrowser
+2024-03-04 09:55:36,090 INFO o.a.j.s.FileServer: Set new base='/home/pbousquet/Workspaces/SQLI/talks/poc_crac_java/pocs/connaissance-client/tests/jmeter'
+2024-03-04 09:57:11,644 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 09:57:11,645 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 09:57:11,645 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 09:57:11,646 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2024-03-04 09:57:11,646 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2024-03-04 09:57:11,758 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 09:57:11,786 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 09:57:11,786 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group ConnaissanceClient Tests.
+2024-03-04 09:57:11,786 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 09:57:11,786 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2024-03-04 09:57:11,788 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 09:57:11,788 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 09:57:11,789 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 09:57:11,902 INFO o.a.j.p.h.s.HTTPHCAbstractImpl: Local host = BO-3JFFVL3
+2024-03-04 09:57:11,905 INFO o.a.j.p.h.s.HTTPHC4Impl: HTTP request retry count = 0
+2024-03-04 10:00:11,718 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 10:00:11,720 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 10:00:11,726 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 10:02:57,693 INFO o.a.j.g.a.ExportTransactionAndSamplerNames: Exported transactions: jmeter.reportgenerator.exporter.html.series_filter=^(ConnaissanceClient - DELETE /v1/connaissance-clients/{idClient}|ConnaissanceClient - GET /actuator/health|ConnaissanceClient - GET /v1/connaissance-clients|ConnaissanceClient - GET /v1/connaissance-clients/{idClient}|ConnaissanceClient - POST /v1/connaissance-clients|ConnaissanceClient - PUT /v1/connaissance-clients/{idClient}/adresse|ConnaissanceClient - PUT /v1/connaissance-clients/{idClient}/situation|Keykloack Authentication - HTTP Request)(-success|-failure)?$
+2024-03-04 10:05:32,364 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 10:05:32,364 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 10:05:32,366 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 10:05:32,395 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 10:05:32,396 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group ConnaissanceClient Tests.
+2024-03-04 10:05:32,396 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 10:05:32,396 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2024-03-04 10:05:32,396 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 10:05:32,396 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 10:05:32,397 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 10:08:32,321 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 10:08:32,321 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 10:08:32,322 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 10:09:51,237 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 10:09:51,237 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 10:09:51,239 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 10:09:51,240 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 10:09:51,240 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group ConnaissanceClient Tests.
+2024-03-04 10:09:51,240 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 10:09:51,240 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2024-03-04 10:09:51,240 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 10:09:51,240 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 10:09:51,240 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 10:12:50,931 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 10:12:50,932 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 10:12:50,932 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 10:19:10,215 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 10:19:10,216 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 10:19:10,218 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 10:19:10,252 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 10:19:10,252 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group ConnaissanceClient Tests.
+2024-03-04 10:19:10,252 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 10:19:10,252 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2024-03-04 10:19:10,252 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 10:19:10,253 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 10:19:10,253 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 10:22:10,034 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 10:22:10,035 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 10:22:10,035 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 12:29:19,186 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 12:29:19,187 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 12:29:19,189 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 12:29:19,190 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 12:29:19,190 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group ConnaissanceClient Tests.
+2024-03-04 12:29:19,190 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 12:29:19,190 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2024-03-04 12:29:19,191 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 12:29:19,191 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 12:29:19,191 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 12:31:44,197 INFO o.a.j.g.a.Start: Stopping test
+2024-03-04 12:31:44,200 INFO o.a.j.t.JMeterThread: Stopping: ConnaissanceClient Tests 1-1
+2024-03-04 12:31:44,200 WARN o.a.j.t.JMeterThread: The delay timer was interrupted - probably did not wait as long as intended.
+2024-03-04 12:31:44,200 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 12:31:44,201 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 12:31:44,201 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 12:36:20,404 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 12:36:20,404 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 12:36:20,406 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 12:36:20,435 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 12:36:20,435 INFO o.a.j.e.StandardJMeterEngine: Starting 1 threads for group ConnaissanceClient Tests.
+2024-03-04 12:36:20,435 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 12:36:20,435 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=1 ramp-up=1 delayedStart=false
+2024-03-04 12:36:20,435 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 12:36:20,435 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 12:36:20,436 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 12:39:19,941 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 12:39:19,942 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 12:39:19,942 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 12:39:55,824 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 12:39:55,824 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 12:39:55,830 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 12:39:55,863 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 12:39:55,863 INFO o.a.j.e.StandardJMeterEngine: Starting 3 threads for group ConnaissanceClient Tests.
+2024-03-04 12:39:55,863 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 12:39:55,863 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=3 ramp-up=1 delayedStart=false
+2024-03-04 12:39:55,864 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 12:39:55,864 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 12:39:55,864 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 12:39:56,197 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-2
+2024-03-04 12:39:56,531 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-3
+2024-03-04 12:40:55,488 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 12:40:55,669 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-3
+2024-03-04 12:40:55,832 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-2
+2024-03-04 12:40:55,833 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 12:40:55,833 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 12:42:24,971 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 12:42:24,972 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 12:42:24,974 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 12:42:24,975 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 12:42:24,975 INFO o.a.j.e.StandardJMeterEngine: Starting 3 threads for group ConnaissanceClient Tests.
+2024-03-04 12:42:24,975 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 12:42:24,975 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=3 ramp-up=1 delayedStart=false
+2024-03-04 12:42:24,981 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 12:42:24,979 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 12:42:24,982 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 12:42:25,314 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-2
+2024-03-04 12:42:25,646 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-3
+2024-03-04 12:43:24,483 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 12:43:24,630 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-3
+2024-03-04 12:43:24,853 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-2
+2024-03-04 12:43:24,853 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 12:43:24,854 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 12:51:59,817 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 12:51:59,818 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 12:51:59,820 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 12:51:59,849 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 12:51:59,849 INFO o.a.j.e.StandardJMeterEngine: Starting 3 threads for group ConnaissanceClient Tests.
+2024-03-04 12:51:59,849 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 12:51:59,849 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=3 ramp-up=1 delayedStart=false
+2024-03-04 12:51:59,850 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 12:51:59,850 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 12:51:59,851 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 12:52:00,183 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-2
+2024-03-04 12:52:00,517 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-3
+2024-03-04 12:52:59,609 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 12:52:59,683 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-3
+2024-03-04 12:52:59,789 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-2
+2024-03-04 12:52:59,789 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 12:52:59,790 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 12:55:06,042 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 12:55:06,042 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 12:55:06,045 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 12:55:06,045 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 12:55:06,046 INFO o.a.j.e.StandardJMeterEngine: Starting 3 threads for group ConnaissanceClient Tests.
+2024-03-04 12:55:06,046 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 12:55:06,046 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=3 ramp-up=1 delayedStart=false
+2024-03-04 12:55:06,046 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 12:55:06,046 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 12:55:06,046 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 12:55:06,380 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-2
+2024-03-04 12:55:06,713 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-3
+2024-03-04 12:56:05,689 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 12:56:05,806 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-3
+2024-03-04 12:56:05,903 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-2
+2024-03-04 12:56:05,903 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 12:56:05,904 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 14:17:42,015 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 14:17:42,015 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 14:17:42,019 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 14:17:42,019 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 14:17:42,019 INFO o.a.j.e.StandardJMeterEngine: Starting 3 threads for group ConnaissanceClient Tests.
+2024-03-04 14:17:42,019 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 14:17:42,020 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=3 ramp-up=1 delayedStart=false
+2024-03-04 14:17:42,021 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 14:17:42,021 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 14:17:42,022 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 14:17:42,354 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-2
+2024-03-04 14:17:42,687 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-3
+2024-03-04 14:18:41,582 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-2
+2024-03-04 14:18:41,584 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 14:18:41,952 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-3
+2024-03-04 14:18:41,952 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 14:18:41,953 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 14:19:47,866 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 14:19:47,866 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 14:19:47,868 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 14:19:47,869 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 14:19:47,869 INFO o.a.j.e.StandardJMeterEngine: Starting 3 threads for group ConnaissanceClient Tests.
+2024-03-04 14:19:47,869 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 14:19:47,869 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=3 ramp-up=1 delayedStart=false
+2024-03-04 14:19:47,870 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 14:19:47,870 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 14:19:47,870 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 14:19:48,203 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-2
+2024-03-04 14:19:48,539 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-3
+2024-03-04 14:20:47,374 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-3
+2024-03-04 14:20:47,375 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-2
+2024-03-04 14:20:47,476 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 14:20:47,477 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 14:20:47,477 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 14:22:06,368 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 14:22:06,368 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 14:22:06,370 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 14:22:06,371 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 14:22:06,371 INFO o.a.j.e.StandardJMeterEngine: Starting 3 threads for group ConnaissanceClient Tests.
+2024-03-04 14:22:06,371 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 14:22:06,371 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=3 ramp-up=1 delayedStart=false
+2024-03-04 14:22:06,372 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 14:22:06,372 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 14:22:06,373 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 14:22:06,706 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-2
+2024-03-04 14:22:07,040 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-3
+2024-03-04 14:23:06,006 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-2
+2024-03-04 14:23:06,006 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-3
+2024-03-04 14:23:06,075 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 14:23:06,076 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 14:23:06,076 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 14:23:47,233 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 14:23:47,233 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 14:23:47,234 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 14:23:47,235 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 14:23:47,235 INFO o.a.j.e.StandardJMeterEngine: Starting 3 threads for group ConnaissanceClient Tests.
+2024-03-04 14:23:47,235 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 14:23:47,235 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=3 ramp-up=1 delayedStart=false
+2024-03-04 14:23:47,236 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 14:23:47,237 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 14:23:47,237 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 14:23:47,569 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-2
+2024-03-04 14:23:47,903 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-3
+2024-03-04 14:24:46,747 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-3
+2024-03-04 14:24:46,915 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-2
+2024-03-04 14:24:47,021 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 14:24:47,021 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 14:24:47,022 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 14:55:10,422 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 14:55:10,423 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 14:55:10,424 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 14:55:10,453 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 14:55:10,453 INFO o.a.j.e.StandardJMeterEngine: Starting 3 threads for group ConnaissanceClient Tests.
+2024-03-04 14:55:10,453 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 14:55:10,453 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=3 ramp-up=1 delayedStart=false
+2024-03-04 14:55:10,454 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 14:55:10,454 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 14:55:10,454 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 14:55:10,786 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-2
+2024-03-04 14:55:11,121 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-3
+2024-03-04 14:55:12,497 INFO o.a.j.g.a.Start: Stopping test
+2024-03-04 14:55:12,500 INFO o.a.j.t.JMeterThread: Stopping: ConnaissanceClient Tests 1-2
+2024-03-04 14:55:12,500 INFO o.a.j.t.JMeterThread: Stopping: ConnaissanceClient Tests 1-1
+2024-03-04 14:55:12,500 INFO o.a.j.t.JMeterThread: Stopping: ConnaissanceClient Tests 1-3
+2024-03-04 14:55:12,500 WARN o.a.j.t.JMeterThread: The delay timer was interrupted - probably did not wait as long as intended.
+2024-03-04 14:55:12,500 WARN o.a.j.t.JMeterThread: The delay timer was interrupted - probably did not wait as long as intended.
+2024-03-04 14:55:12,500 WARN o.a.j.t.JMeterThread: The delay timer was interrupted - probably did not wait as long as intended.
+2024-03-04 14:55:12,500 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-2
+2024-03-04 14:55:12,501 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-3
+2024-03-04 14:55:12,501 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 14:55:12,501 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 14:55:12,501 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 14:55:15,759 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 14:55:15,760 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 14:55:15,760 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 14:55:15,798 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 14:55:15,798 INFO o.a.j.e.StandardJMeterEngine: Starting 3 threads for group ConnaissanceClient Tests.
+2024-03-04 14:55:15,799 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 14:55:15,799 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=3 ramp-up=1 delayedStart=false
+2024-03-04 14:55:15,799 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 14:55:15,799 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 14:55:15,799 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 14:55:16,132 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-2
+2024-03-04 14:55:16,465 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-3
+2024-03-04 14:55:19,198 INFO o.a.j.g.a.Start: Stopping test
+2024-03-04 14:55:19,200 INFO o.a.j.t.JMeterThread: Stopping: ConnaissanceClient Tests 1-3
+2024-03-04 14:55:19,200 WARN o.a.j.t.JMeterThread: The delay timer was interrupted - probably did not wait as long as intended.
+2024-03-04 14:55:19,200 INFO o.a.j.t.JMeterThread: Stopping: ConnaissanceClient Tests 1-2
+2024-03-04 14:55:19,200 INFO o.a.j.t.JMeterThread: Stopping: ConnaissanceClient Tests 1-1
+2024-03-04 14:55:19,200 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-3
+2024-03-04 14:55:19,201 WARN o.a.j.t.JMeterThread: The delay timer was interrupted - probably did not wait as long as intended.
+2024-03-04 14:55:19,201 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 14:55:19,201 WARN o.a.j.t.JMeterThread: The delay timer was interrupted - probably did not wait as long as intended.
+2024-03-04 14:55:19,201 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-2
+2024-03-04 14:55:19,201 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 14:55:19,201 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 14:57:08,585 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 14:57:08,585 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 14:57:08,585 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 14:57:08,624 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 14:57:08,624 INFO o.a.j.e.StandardJMeterEngine: Starting 3 threads for group ConnaissanceClient Tests.
+2024-03-04 14:57:08,624 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 14:57:08,624 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=3 ramp-up=1 delayedStart=false
+2024-03-04 14:57:08,625 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 14:57:08,625 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 14:57:08,625 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 14:57:08,957 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-2
+2024-03-04 14:57:09,291 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-3
+2024-03-04 14:58:08,140 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 14:58:08,379 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-3
+2024-03-04 14:58:08,485 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-2
+2024-03-04 14:58:08,485 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 14:58:08,485 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 14:59:41,758 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 14:59:41,759 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 14:59:41,759 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 14:59:41,788 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 14:59:41,788 INFO o.a.j.e.StandardJMeterEngine: Starting 3 threads for group ConnaissanceClient Tests.
+2024-03-04 14:59:41,788 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 14:59:41,788 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=3 ramp-up=1 delayedStart=false
+2024-03-04 14:59:41,788 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 14:59:41,789 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 14:59:41,789 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 14:59:42,122 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-2
+2024-03-04 14:59:42,455 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-3
+2024-03-04 15:00:41,379 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 15:00:41,487 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-3
+2024-03-04 15:00:41,648 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-2
+2024-03-04 15:00:41,648 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 15:00:41,648 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 15:01:34,317 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 15:01:34,318 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 15:01:34,318 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 15:01:34,349 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 15:01:34,349 INFO o.a.j.e.StandardJMeterEngine: Starting 3 threads for group ConnaissanceClient Tests.
+2024-03-04 15:01:34,349 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 15:01:34,349 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=3 ramp-up=1 delayedStart=false
+2024-03-04 15:01:34,350 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 15:01:34,350 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 15:01:34,350 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 15:01:34,682 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-2
+2024-03-04 15:01:35,016 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-3
+2024-03-04 15:02:33,865 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 15:02:33,958 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-3
+2024-03-04 15:02:34,170 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-2
+2024-03-04 15:02:34,170 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 15:02:34,171 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 16:42:34,443 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 16:42:34,443 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 16:42:34,443 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 16:42:34,478 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 16:42:34,478 INFO o.a.j.e.StandardJMeterEngine: Starting 3 threads for group ConnaissanceClient Tests.
+2024-03-04 16:42:34,478 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 16:42:34,478 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=3 ramp-up=1 delayedStart=false
+2024-03-04 16:42:34,478 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 16:42:34,479 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 16:42:34,479 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 16:42:34,812 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-2
+2024-03-04 16:42:35,145 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-3
+2024-03-04 16:43:34,126 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 16:43:34,278 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-3
+2024-03-04 16:43:34,455 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-2
+2024-03-04 16:43:34,455 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 16:43:34,455 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 16:45:00,883 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 16:45:00,883 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 16:45:00,884 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 16:45:00,912 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 16:45:00,913 INFO o.a.j.e.StandardJMeterEngine: Starting 3 threads for group ConnaissanceClient Tests.
+2024-03-04 16:45:00,913 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 16:45:00,913 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=3 ramp-up=1 delayedStart=false
+2024-03-04 16:45:00,913 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 16:45:00,914 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 16:45:00,914 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 16:45:01,247 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-2
+2024-03-04 16:45:01,580 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-3
+2024-03-04 16:46:00,504 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 16:46:00,719 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-3
+2024-03-04 16:46:00,888 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-2
+2024-03-04 16:46:00,889 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 16:46:00,889 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 16:46:28,054 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 16:46:28,054 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 16:46:28,054 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 16:46:28,084 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 16:46:28,084 INFO o.a.j.e.StandardJMeterEngine: Starting 3 threads for group ConnaissanceClient Tests.
+2024-03-04 16:46:28,084 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 16:46:28,084 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=3 ramp-up=1 delayedStart=false
+2024-03-04 16:46:28,084 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 16:46:28,085 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 16:46:28,085 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 16:46:28,418 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-2
+2024-03-04 16:46:28,750 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-3
+2024-03-04 16:47:27,697 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 16:47:27,876 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-3
+2024-03-04 16:47:28,056 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-2
+2024-03-04 16:47:28,057 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 16:47:28,057 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)
+2024-03-04 16:48:12,538 INFO o.a.j.e.StandardJMeterEngine: Running the test!
+2024-03-04 16:48:12,538 INFO o.a.j.s.SampleEvent: List of sample_variables: []
+2024-03-04 16:48:12,539 INFO o.a.j.g.u.JMeterMenuBar: setRunning(true, *local*)
+2024-03-04 16:48:12,572 INFO o.a.j.e.StandardJMeterEngine: Starting ThreadGroup: 1 : ConnaissanceClient Tests
+2024-03-04 16:48:12,572 INFO o.a.j.e.StandardJMeterEngine: Starting 3 threads for group ConnaissanceClient Tests.
+2024-03-04 16:48:12,572 INFO o.a.j.e.StandardJMeterEngine: Thread will continue on error
+2024-03-04 16:48:12,572 INFO o.a.j.t.ThreadGroup: Starting thread group... number=1 threads=3 ramp-up=1 delayedStart=false
+2024-03-04 16:48:12,572 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-1
+2024-03-04 16:48:12,572 INFO o.a.j.t.ThreadGroup: Started thread group number 1
+2024-03-04 16:48:12,572 INFO o.a.j.e.StandardJMeterEngine: All thread groups have been started
+2024-03-04 16:48:12,906 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-2
+2024-03-04 16:48:13,239 INFO o.a.j.t.JMeterThread: Thread started: ConnaissanceClient Tests 1-3
+2024-03-04 16:49:12,090 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-3
+2024-03-04 16:49:12,227 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-2
+2024-03-04 16:49:12,416 INFO o.a.j.t.JMeterThread: Thread finished: ConnaissanceClient Tests 1-1
+2024-03-04 16:49:12,416 INFO o.a.j.e.StandardJMeterEngine: Notifying test listeners of end of test
+2024-03-04 16:49:12,416 INFO o.a.j.g.u.JMeterMenuBar: setRunning(false, *local*)

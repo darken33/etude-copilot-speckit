@@ -1,0 +1,103 @@
+openapi: 3.0.3
+info:
+  title: Connaissance Client API
+  description: API pour la gestion et la modification globale des fiches clients.
+  version: 1.0.0
+  contact:
+    name: SQLI
+    email: contact@sqli.com
+servers:
+  - url: http://localhost:8080/api
+tags:
+  - name: ConnaissanceClient
+    description: Opérations sur les fiches clients
+paths:
+  /v1/connaissance-clients/{id}:
+    put:
+      summary: Modification globale d'une fiche client
+      description: Permet la modification atomique et complète d'une fiche client existante.
+      operationId: modifierClient
+      tags:
+        - ConnaissanceClient
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+            format: uuid
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConnaissanceClientInDto'
+      responses:
+        '200':
+          description: Client modifié
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ConnaissanceClientDto'
+        '400':
+          description: Requête invalide
+        '404':
+          description: Client non trouvé
+        '422':
+          description: Adresse invalide
+      security:
+        - bearerAuth: []
+      x-rate-limit:
+        requests: 5
+        per: second
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    ConnaissanceClientInDto:
+      type: object
+      required:
+        - nom
+        - prenom
+        - adresse
+        - situationFamiliale
+        - nombreEnfants
+      properties:
+        nom:
+          type: string
+        prenom:
+          type: string
+        adresse:
+          $ref: '#/components/schemas/AdresseDto'
+        situationFamiliale:
+          type: string
+          enum: [CELIBATAIRE, MARIE, DIVORCE, VEUF]
+        nombreEnfants:
+          type: integer
+          minimum: 0
+    ConnaissanceClientDto:
+      allOf:
+        - $ref: '#/components/schemas/ConnaissanceClientInDto'
+        - type: object
+          properties:
+            id:
+              type: string
+              format: uuid
+    AdresseDto:
+      type: object
+      required:
+        - ligne1
+        - codePostal
+        - ville
+      properties:
+        ligne1:
+          type: string
+        ligne2:
+          type: string
+        codePostal:
+          type: string
+        ville:
+          type: string

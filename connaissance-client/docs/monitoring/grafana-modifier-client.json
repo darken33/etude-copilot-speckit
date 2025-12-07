@@ -1,0 +1,322 @@
+{
+  "dashboard": {
+    "title": "Connaissance Client - PUT Modifier Client Monitoring",
+    "tags": ["connaissance-client", "modifier-client", "observability"],
+    "timezone": "browser",
+    "editable": true,
+    "hideControls": false,
+    "graphTooltip": 1,
+    "panels": [
+      {
+        "id": 1,
+        "title": "Circuit Breaker API IGN - État",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "resilience4j_circuitbreaker_state{name=\"apiIgn\"}",
+            "legendFormat": "État Circuit Breaker",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "h": 4,
+          "w": 6,
+          "x": 0,
+          "y": 0
+        },
+        "options": {
+          "graphMode": "none",
+          "colorMode": "background",
+          "justifyMode": "center",
+          "textMode": "value_and_name"
+        },
+        "mappings": [
+          {
+            "type": "value",
+            "options": {
+              "0": {
+                "text": "CLOSED",
+                "color": "green"
+              },
+              "1": {
+                "text": "OPEN",
+                "color": "red"
+              },
+              "2": {
+                "text": "HALF_OPEN",
+                "color": "orange"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Circuit Breaker - Taux d'échec",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "resilience4j_circuitbreaker_failure_rate{name=\"apiIgn\"}",
+            "legendFormat": "Taux d'échec (%)",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 6,
+          "y": 0
+        },
+        "yaxes": [
+          {
+            "format": "percent",
+            "label": "Taux d'échec",
+            "logBase": 1,
+            "max": 100,
+            "min": 0
+          }
+        ],
+        "thresholds": [
+          {
+            "value": 30,
+            "colorMode": "critical",
+            "op": "gt",
+            "fill": true,
+            "line": true
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Appels API IGN - Succès vs Échecs",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(resilience4j_circuitbreaker_calls_total{name=\"apiIgn\",kind=\"successful\"}[5m])",
+            "legendFormat": "Succès",
+            "refId": "A"
+          },
+          {
+            "expr": "rate(resilience4j_circuitbreaker_calls_total{name=\"apiIgn\",kind=\"failed\"}[5m])",
+            "legendFormat": "Échecs",
+            "refId": "B"
+          },
+          {
+            "expr": "rate(resilience4j_circuitbreaker_calls_total{name=\"apiIgn\",kind=\"not_permitted\"}[5m])",
+            "legendFormat": "Rejetés (circuit ouvert)",
+            "refId": "C"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 8
+        },
+        "yaxes": [
+          {
+            "format": "reqps",
+            "label": "Requêtes/sec"
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "PUT /v1/connaissance-clients/{id} - Latence (p50, p95, p99)",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.50, sum(rate(http_server_requests_seconds_bucket{method=\"PUT\",uri=\"/v1/connaissance-clients/{id}\"}[5m])) by (le))",
+            "legendFormat": "p50",
+            "refId": "A"
+          },
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(http_server_requests_seconds_bucket{method=\"PUT\",uri=\"/v1/connaissance-clients/{id}\"}[5m])) by (le))",
+            "legendFormat": "p95",
+            "refId": "B"
+          },
+          {
+            "expr": "histogram_quantile(0.99, sum(rate(http_server_requests_seconds_bucket{method=\"PUT\",uri=\"/v1/connaissance-clients/{id}\"}[5m])) by (le))",
+            "legendFormat": "p99",
+            "refId": "C"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 12,
+          "y": 8
+        },
+        "yaxes": [
+          {
+            "format": "s",
+            "label": "Temps de réponse",
+            "logBase": 1
+          }
+        ],
+        "thresholds": [
+          {
+            "value": 2,
+            "colorMode": "critical",
+            "op": "gt",
+            "fill": false,
+            "line": true
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "PUT Modifier Client - Codes de statut HTTP",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "rate(http_server_requests_seconds_count{method=\"PUT\",uri=\"/v1/connaissance-clients/{id}\",status=\"200\"}[5m])",
+            "legendFormat": "200 OK",
+            "refId": "A"
+          },
+          {
+            "expr": "rate(http_server_requests_seconds_count{method=\"PUT\",uri=\"/v1/connaissance-clients/{id}\",status=\"404\"}[5m])",
+            "legendFormat": "404 Not Found",
+            "refId": "B"
+          },
+          {
+            "expr": "rate(http_server_requests_seconds_count{method=\"PUT\",uri=\"/v1/connaissance-clients/{id}\",status=\"422\"}[5m])",
+            "legendFormat": "422 Unprocessable Entity",
+            "refId": "C"
+          },
+          {
+            "expr": "rate(http_server_requests_seconds_count{method=\"PUT\",uri=\"/v1/connaissance-clients/{id}\",status=\"400\"}[5m])",
+            "legendFormat": "400 Bad Request",
+            "refId": "D"
+          },
+          {
+            "expr": "rate(http_server_requests_seconds_count{method=\"PUT\",uri=\"/v1/connaissance-clients/{id}\",status=\"500\"}[5m])",
+            "legendFormat": "500 Server Error",
+            "refId": "E"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 16
+        },
+        "yaxes": [
+          {
+            "format": "reqps",
+            "label": "Requêtes/sec"
+          }
+        ],
+        "stack": true
+      },
+      {
+        "id": 6,
+        "title": "Événements Kafka - Adresse Changed",
+        "type": "stat",
+        "targets": [
+          {
+            "expr": "increase(kafka_producer_topic_record_send_total{topic=\"event.adresse.v1\"}[1h])",
+            "legendFormat": "Événements envoyés (1h)",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "h": 4,
+          "w": 6,
+          "x": 12,
+          "y": 16
+        },
+        "options": {
+          "graphMode": "area",
+          "colorMode": "value",
+          "justifyMode": "center",
+          "textMode": "value_and_name"
+        }
+      },
+      {
+        "id": 7,
+        "title": "MongoDB - Latence des requêtes",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "histogram_quantile(0.95, sum(rate(mongodb_driver_commands_duration_seconds_bucket[5m])) by (le))",
+            "legendFormat": "p95 latence MongoDB",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 6,
+          "x": 18,
+          "y": 16
+        },
+        "yaxes": [
+          {
+            "format": "s",
+            "label": "Latence"
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "title": "JVM - Utilisation mémoire",
+        "type": "graph",
+        "targets": [
+          {
+            "expr": "jvm_memory_used_bytes{area=\"heap\"}",
+            "legendFormat": "Heap utilisée",
+            "refId": "A"
+          },
+          {
+            "expr": "jvm_memory_max_bytes{area=\"heap\"}",
+            "legendFormat": "Heap max",
+            "refId": "B"
+          }
+        ],
+        "gridPos": {
+          "h": 8,
+          "w": 12,
+          "x": 0,
+          "y": 24
+        },
+        "yaxes": [
+          {
+            "format": "bytes",
+            "label": "Mémoire"
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "title": "Taux d'erreur global",
+        "type": "singlestat",
+        "targets": [
+          {
+            "expr": "sum(rate(http_server_requests_seconds_count{method=\"PUT\",uri=\"/v1/connaissance-clients/{id}\",status=~\"5..\"}[5m])) / sum(rate(http_server_requests_seconds_count{method=\"PUT\",uri=\"/v1/connaissance-clients/{id}\"}[5m])) * 100",
+            "refId": "A"
+          }
+        ],
+        "gridPos": {
+          "h": 4,
+          "w": 6,
+          "x": 12,
+          "y": 24
+        },
+        "format": "percent",
+        "thresholds": "1,5",
+        "colors": [
+          "green",
+          "orange",
+          "red"
+        ]
+      }
+    ],
+    "refresh": "30s",
+    "schemaVersion": 16,
+    "version": 1,
+    "time": {
+      "from": "now-1h",
+      "to": "now"
+    }
+  }
+}

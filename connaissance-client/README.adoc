@@ -1,0 +1,118 @@
+= Connaisance Client
+
+== Spring Native
+
+$ mvn clean package
+$ cd connaissance-client-app && mvn spring-boot:build-image
+$ docker run -p 8080:8080 docker.io/library/connaissance-client-app:1.0.0-SNAPSHOT
+
+== Monitoring & Observability
+
+=== Endpoints Actuator
+
+L'application expose les endpoints Spring Boot Actuator pour le monitoring :
+
+* **Health Check** : http://localhost:8080/actuator/health
+** Affiche l'état de l'application et du circuit breaker API IGN
+** Statut UP = Circuit fermé, API IGN disponible
+** Statut DOWN = Circuit ouvert, fallback actif
+
+* **Prometheus Metrics** : http://localhost:8080/actuator/prometheus
+** Métriques au format Prometheus pour scraping
+** Métriques circuit breaker : `resilience4j_circuitbreaker_*`
+** Métriques HTTP : `http_server_requests_*`
+** Métriques JVM : `jvm_memory_*`, `jvm_threads_*`
+
+* **Info** : http://localhost:8080/actuator/info
+** Informations sur l'application et la version
+
+=== Dashboard Grafana
+
+Un dashboard Grafana pré-configuré est disponible dans `docs/monitoring/grafana-modifier-client.json`.
+
+**Installation** :
+[source,bash]
+----
+# 1. Importer le dashboard dans Grafana
+# UI > Dashboards > Import > Upload JSON file
+
+# 2. Configurer la source de données Prometheus
+# Configuration > Data Sources > Add Prometheus
+# URL: http://prometheus:9090
+----
+
+**Métriques visualisées** :
+* État du circuit breaker API IGN (CLOSED/OPEN/HALF_OPEN)
+* Taux d'échec et d'appels lents
+* Latence p50, p95, p99 du endpoint PUT /v1/connaissance-clients/{id}
+* Distribution des codes HTTP (200, 404, 422, 400, 500)
+* Événements Kafka envoyés (changement d'adresse)
+* Latence MongoDB
+* Utilisation mémoire JVM
+
+=== Alertes Prometheus
+
+Les règles d'alerting sont définies dans `docs/monitoring/alerts.yml`.
+
+**Installation** :
+[source,bash]
+----
+# Ajouter dans prometheus.yml
+rule_files:
+  - "/etc/prometheus/rules/alerts.yml"
+
+# Recharger la configuration
+curl -X POST http://prometheus:9090/-/reload
+----
+
+**Alertes configurées** :
+* **ApiIgnCircuitBreakerOpen** (critical) : Circuit breaker ouvert > 2min
+* **ModifierClientHighFailureRate** (warning) : Taux d'erreur 5xx > 5%
+* **ModifierClientHighLatency** (warning) : Latence p95 > 2s
+* **ModifierClientHighInvalidAddressRate** (info) : Taux HTTP 422 > 30%
+* **ModifierClientServiceDown** (critical) : Service indisponible > 1min
+* **ModifierClientHighMemoryUsage** (warning) : Heap JVM > 85%
+* **ModifierClientKafkaEventsNotSent** (warning) : Erreurs envoi Kafka
+
+=== Configuration Circuit Breaker
+
+Le circuit breaker est configuré dans `application.yml` :
+
+[source,yaml]
+----
+resilience4j:
+  circuitbreaker:
+    instances:
+      apiIgn:
+        failureRateThreshold: 30          # Ouvre si 30% d'échecs
+        slowCallRateThreshold: 50         # Ouvre si 50% d'appels lents
+        slowCallDurationThreshold: 3s     # Appel considéré lent si > 3s
+        waitDurationInOpenState: 60s      # Reste ouvert 60s avant test
+        slidingWindowSize: 10             # Fenêtre de 10 appels
+        minimumNumberOfCalls: 5           # Min 5 appels avant calcul
+----
+
+**États du circuit** :
+* **CLOSED** : Fonctionnement normal, appels à l'API IGN
+* **OPEN** : Circuit ouvert, utilisation du fallback (pas de validation externe)
+* **HALF_OPEN** : Phase de test après expiration du délai
+
+=== Tests de résilience
+
+Tester le circuit breaker manuellement :
+
+[source,bash]
+----
+# 1. Provoquer l'ouverture du circuit (adresses invalides)
+for i in {1..10}; do
+  curl -X PUT http://localhost:8080/v1/connaissance-clients/{id} \
+    -H "Content-Type: application/json" \
+    -d '{"codePostal": "99999", "ville": "Invalid", ...}'
+done
+
+# 2. Vérifier l'état du circuit
+curl http://localhost:8080/actuator/health | jq '.components.apiIgnHealthIndicator'
+
+# 3. Vérifier les métriques Prometheus
+curl http://localhost:8080/actuator/prometheus | grep resilience4j_circuitbreaker
+----

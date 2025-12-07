@@ -1,0 +1,66 @@
+{
+  "connaissance-clients": [
+    {
+      "id": "8a9204f5-aa42-47bc-9f04-17caab5deeee",
+      "nom": "Bousquet",
+      "prenom": "Philippe",
+      "ligne1": "48 rue Bauducheu",
+      "ligne2": "Appartement 3B",
+      "codePostal": "33800",
+      "ville": "Bordeaux",
+      "situationFamiliale": "MARIE",
+      "nombreEnfants": 2
+    },
+    {
+      "id": "7b8103e4-bb31-36ad-8e03-26dbba4cdfff",
+      "nom": "Dupont",
+      "prenom": "Marie",
+      "ligne1": "15 avenue des Champs",
+      "codePostal": "75008",
+      "ville": "Paris",
+      "situationFamiliale": "CELIBATAIRE",
+      "nombreEnfants": 0
+    },
+    {
+      "id": "6c7002d3-cc20-25bc-7d02-15eaac3bceee",
+      "nom": "Martin",
+      "prenom": "Jean",
+      "ligne1": "123 boulevard de la République",
+      "ligne2": "Résidence Le Parc",
+      "codePostal": "13001",
+      "ville": "Marseille",
+      "situationFamiliale": "MARIE",
+      "nombreEnfants": 3
+    },
+    {
+      "id": "5d6001c2-dd10-14ad-6c01-04daab2adddd",
+      "nom": "Bernard",
+      "prenom": "Sophie",
+      "ligne1": "67 rue de la Paix",
+      "codePostal": "69002",
+      "ville": "Lyon",
+      "situationFamiliale": "CELIBATAIRE",
+      "nombreEnfants": 1
+    },
+    {
+      "id": "3f4000a0-ff00-02cd-4a00-02ba99aa0bbb",
+      "nom": "Leroy",
+      "prenom": "Catherine",
+      "ligne1": "34 rue Victor Hugo",
+      "codePostal": "59000",
+      "ville": "Lille",
+      "situationFamiliale": "CELIBATAIRE",
+      "nombreEnfants": 0
+    },
+    {
+      "id": "1d200080-1111-00eb-2800-00987700999a",
+      "nom": "Fournier",
+      "prenom": "Isabelle",
+      "ligne1": "78 rue de Strasbourg",
+      "codePostal": "67000",
+      "ville": "Strasbourg",
+      "situationFamiliale": "MARIE",
+      "nombreEnfants": 2
+    }
+  ]
+}

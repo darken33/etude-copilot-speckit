@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="connaissance-client-karate" />
+      </profile>
+      <profile name="Annotation profile for connaissance-client" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.24/lombok-1.18.24.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct-processor/1.4.2.Final/mapstruct-processor-1.4.2.Final.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/mapstruct/mapstruct/1.4.2.Final/mapstruct-1.4.2.Final.jar" />
+        </processorPath>
+        <module name="connaissance-client-app" />
+        <module name="connaissance-client-api" />
+        <module name="connaissance-client-domain" />
+        <module name="connaissance-client-db-port" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="connaissance-client" target="11" />
+      <module name="connaissance-client-17" target="17" />
+      <module name="connaissance-client-api" target="17" />
+      <module name="connaissance-client-app" target="17" />
+      <module name="connaissance-client-db-port" target="17" />
+      <module name="connaissance-client-domain" target="17" />
+      <module name="connaissance-client-karate" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="connaissance-client-api" options="-parameters" />
+      <module name="connaissance-client-app" options="-parameters" />
+      <module name="connaissance-client-db-port" options="-parameters" />
+      <module name="connaissance-client-domain" options="-parameters" />
+      <module name="connaissance-client-karate" options="-Werror" />
+    </option>
+  </component>
+</project>

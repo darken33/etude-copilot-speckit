@@ -1,0 +1,208 @@
+# Prometheus Alerting Rules - Connaissance Client PUT Modifier Client
+# 
+# Ces règles définissent les alertes pour le monitoring de l'endpoint PUT /v1/connaissance-clients/{id}
+# 
+# Installation: 
+#   Copier ce fichier dans /etc/prometheus/rules/ ou ajouter dans prometheus.yml:
+#   rule_files:
+#     - "alerts.yml"
+
+groups:
+  - name: connaissance_client_modifier_client_alerts
+    interval: 30s
+    rules:
+      # Alerte: Circuit breaker ouvert
+      - alert: ApiIgnCircuitBreakerOpen
+        expr: resilience4j_circuitbreaker_state{name="apiIgn"} == 1
+        for: 2m
+        labels:
+          severity: critical
+          component: circuit-breaker
+          service: connaissance-client
+        annotations:
+          summary: "Circuit breaker API IGN est OUVERT"
+          description: |
+            Le circuit breaker pour l'API IGN est en état OUVERT depuis plus de 2 minutes.
+            Les appels à l'API IGN sont rejetés et le fallback est utilisé.
+            
+            État actuel: OPEN
+            Service affecté: Validation d'adresse
+            Impact: Les adresses ne sont plus validées par l'API IGN
+            
+            Actions recommandées:
+            1. Vérifier la disponibilité de l'API IGN
+            2. Consulter les logs pour identifier la cause des échecs
+            3. Le circuit se refermera automatiquement après 60s si l'API redevient disponible
+
+      # Alerte: Taux d'échec élevé
+      - alert: ModifierClientHighFailureRate
+        expr: |
+          (
+            sum(rate(http_server_requests_seconds_count{method="PUT",uri="/v1/connaissance-clients/{id}",status=~"5.."}[5m]))
+            /
+            sum(rate(http_server_requests_seconds_count{method="PUT",uri="/v1/connaissance-clients/{id}"}[5m]))
+          ) * 100 > 5
+        for: 5m
+        labels:
+          severity: warning
+          component: api
+          service: connaissance-client
+          endpoint: PUT /v1/connaissance-clients/{id}
+        annotations:
+          summary: "Taux d'erreur élevé sur modifier-client"
+          description: |
+            Le taux d'erreur 5xx sur l'endpoint PUT /v1/connaissance-clients/{id} dépasse 5% depuis 5 minutes.
+            
+            Taux d'erreur actuel: {{ printf "%.2f" $value }}%
+            Seuil d'alerte: 5%
+            
+            Causes possibles:
+            - Problème de connexion MongoDB
+            - Erreurs dans la logique métier
+            - Timeout sur les appels externes
+            
+            Actions recommandées:
+            1. Consulter les logs applicatifs
+            2. Vérifier l'état de MongoDB et Kafka
+            3. Vérifier le circuit breaker API IGN
+
+      # Alerte: Latence élevée (p95 > 2s)
+      - alert: ModifierClientHighLatency
+        expr: |
+          histogram_quantile(0.95, 
+            sum(rate(http_server_requests_seconds_bucket{method="PUT",uri="/v1/connaissance-clients/{id}"}[5m])) by (le)
+          ) > 2
+        for: 5m
+        labels:
+          severity: warning
+          component: api
+          service: connaissance-client
+          endpoint: PUT /v1/connaissance-clients/{id}
+        annotations:
+          summary: "Latence élevée sur modifier-client"
+          description: |
+            La latence p95 de l'endpoint PUT /v1/connaissance-clients/{id} dépasse 2 secondes.
+            
+            Latence p95 actuelle: {{ printf "%.2f" $value }}s
+            Seuil d'alerte: 2s
+            
+            Impact: Expérience utilisateur dégradée
+            
+            Causes possibles:
+            - Appels lents à l'API IGN (validation adresse)
+            - Latence MongoDB élevée
+            - Charge CPU/mémoire élevée
+            
+            Actions recommandées:
+            1. Vérifier les métriques de l'API IGN
+            2. Vérifier la latence MongoDB
+            3. Analyser les profils de performance (APM)
+
+      # Alerte: Taux d'adresses invalides anormal
+      - alert: ModifierClientHighInvalidAddressRate
+        expr: |
+          (
+            sum(rate(http_server_requests_seconds_count{method="PUT",uri="/v1/connaissance-clients/{id}",status="422"}[5m]))
+            /
+            sum(rate(http_server_requests_seconds_count{method="PUT",uri="/v1/connaissance-clients/{id}"}[5m]))
+          ) * 100 > 30
+        for: 10m
+        labels:
+          severity: info
+          component: validation
+          service: connaissance-client
+          endpoint: PUT /v1/connaissance-clients/{id}
+        annotations:
+          summary: "Taux élevé d'adresses invalides"
+          description: |
+            Le taux de requêtes HTTP 422 (adresses invalides) dépasse 30% depuis 10 minutes.
+            
+            Taux actuel: {{ printf "%.2f" $value }}%
+            Seuil d'alerte: 30%
+            
+            Causes possibles:
+            - Problème côté client (formulaire mal validé)
+            - Données de test avec adresses fictives
+            - Changement dans les règles de validation API IGN
+            
+            Actions recommandées:
+            1. Analyser les logs pour identifier les patterns d'adresses rejetées
+            2. Vérifier si c'est un pic ponctuel ou une tendance
+            3. Communiquer avec les équipes front-end si nécessaire
+
+      # Alerte: Service indisponible
+      - alert: ModifierClientServiceDown
+        expr: up{job="connaissance-client"} == 0
+        for: 1m
+        labels:
+          severity: critical
+          component: service
+          service: connaissance-client
+        annotations:
+          summary: "Service connaissance-client indisponible"
+          description: |
+            Le service connaissance-client ne répond plus depuis 1 minute.
+            
+            Impact: Toutes les fonctionnalités client sont indisponibles
+            
+            Actions immédiates:
+            1. Vérifier les pods Kubernetes / conteneurs Docker
+            2. Consulter les logs d'application
+            3. Vérifier les ressources (CPU, mémoire)
+            4. Escalader à l'équipe SRE si nécessaire
+
+      # Alerte: Utilisation mémoire élevée
+      - alert: ModifierClientHighMemoryUsage
+        expr: |
+          (
+            jvm_memory_used_bytes{area="heap",job="connaissance-client"}
+            /
+            jvm_memory_max_bytes{area="heap",job="connaissance-client"}
+          ) * 100 > 85
+        for: 5m
+        labels:
+          severity: warning
+          component: jvm
+          service: connaissance-client
+        annotations:
+          summary: "Utilisation mémoire heap élevée"
+          description: |
+            L'utilisation de la mémoire heap JVM dépasse 85% depuis 5 minutes.
+            
+            Utilisation actuelle: {{ printf "%.1f" $value }}%
+            Seuil d'alerte: 85%
+            
+            Risque: OutOfMemoryError imminent
+            
+            Actions recommandées:
+            1. Analyser le heap dump si disponible
+            2. Vérifier les fuites mémoire potentielles
+            3. Augmenter la mémoire allouée si nécessaire
+            4. Redémarrer le service si critique
+
+      # Alerte: Événements Kafka non envoyés
+      - alert: ModifierClientKafkaEventsNotSent
+        expr: |
+          rate(kafka_producer_topic_record_error_total{topic="event.adresse.v1"}[5m]) > 0
+        for: 2m
+        labels:
+          severity: warning
+          component: kafka
+          service: connaissance-client
+          topic: event.adresse.v1
+        annotations:
+          summary: "Échec d'envoi d'événements Kafka"
+          description: |
+            Des erreurs d'envoi d'événements Kafka sont détectées sur le topic event.adresse.v1.
+            
+            Impact: Les événements de changement d'adresse ne sont pas propagés
+            
+            Causes possibles:
+            - Kafka broker indisponible
+            - Problème de connexion réseau
+            - Topic inexistant ou mal configuré
+            
+            Actions recommandées:
+            1. Vérifier l'état du cluster Kafka
+            2. Vérifier la configuration du producer
+            3. Consulter les logs Kafka

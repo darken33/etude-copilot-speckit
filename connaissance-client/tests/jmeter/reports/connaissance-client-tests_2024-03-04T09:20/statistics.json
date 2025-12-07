@@ -1,0 +1,50 @@
+{
+  "ConnaissanceClient - GET /v1/connaissance-clients" : {
+    "transaction" : "ConnaissanceClient - GET /v1/connaissance-clients",
+    "sampleCount" : 767,
+    "errorCount" : 98,
+    "errorPct" : 12.777054,
+    "meanResTime" : 8.151238591916552,
+    "medianResTime" : 7.0,
+    "minResTime" : 0.0,
+    "maxResTime" : 534.0,
+    "pct1ResTime" : 11.0,
+    "pct2ResTime" : 12.0,
+    "pct3ResTime" : 20.0,
+    "throughput" : 4.270030730860019,
+    "receivedKBytesPerSec" : 39.17337070248129,
+    "sentKBytesPerSec" : 0.6463425422688505
+  },
+  "Total" : {
+    "transaction" : "Total",
+    "sampleCount" : 1534,
+    "errorCount" : 195,
+    "errorPct" : 12.711864,
+    "meanResTime" : 16.736636245110834,
+    "medianResTime" : 6.0,
+    "minResTime" : 0.0,
+    "maxResTime" : 15001.0,
+    "pct1ResTime" : 10.0,
+    "pct2ResTime" : 11.0,
+    "pct3ResTime" : 16.0,
+    "throughput" : 8.531606989911124,
+    "receivedKBytesPerSec" : 42.50021703561418,
+    "sentKBytesPerSec" : 1.2580787651138474
+  },
+  "ConnaissanceClient - GET /actuator/health" : {
+    "transaction" : "ConnaissanceClient - GET /actuator/health",
+    "sampleCount" : 767,
+    "errorCount" : 97,
+    "errorPct" : 12.646675,
+    "meanResTime" : 25.322033898305058,
+    "medianResTime" : 6.0,
+    "minResTime" : 0.0,
+    "maxResTime" : 15001.0,
+    "pct1ResTime" : 9.0,
+    "pct2ResTime" : 10.0,
+    "pct3ResTime" : 12.0,
+    "throughput" : 4.268343582180918,
+    "receivedKBytesPerSec" : 3.367631177133476,
+    "sentKBytesPerSec" : 0.6127407290826122
+  }
+}
